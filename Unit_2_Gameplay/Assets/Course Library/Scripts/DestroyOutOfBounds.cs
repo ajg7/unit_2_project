@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
-    [SerializeField] float topBound = 100;
+    [SerializeField] float topBound = 30;
+    [SerializeField] float lowBound = -10;
+    [SerializeField] GameObject gameObject;
 
     private void Update()
     {
         if (transform.position.z > topBound)
         {
-            Debug.Log("hi");
-            // Destroy(gameObject);
+            Destroy(gameObject);
+        }
+        else if (transform.position.z < lowBound)
+        {
+            Destroy(gameObject);
         }
     }
+
 }
